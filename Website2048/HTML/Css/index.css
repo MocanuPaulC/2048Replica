@@ -1,0 +1,47 @@
+#IndexHTML body div h1
+{
+    font-style: italic;
+    font-family: "Ink Free", sans-serif ;
+    text-align: center;
+    font-size: 70px;
+}
+#IndexHTML body #titlediv
+{
+    display: block;
+    height: 80px;
+}
+
+.navbar
+{
+    overflow: hidden;
+    background-color: #F0DDD7;
+    display: block;
+}
+
+#IndexHTML
+{
+    background-color: #e0c2b8;
+}
+
+.buttons
+{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 12px;
+    text-decoration: none;
+    color: black;
+}
+.buttons:hover
+{
+    background-color: #dbafa0;
+}
+
+.divbuttons
+{
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+}

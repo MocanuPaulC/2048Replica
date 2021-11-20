@@ -17,11 +17,16 @@ public class Main {
                 case "HOME":
                     screen.display_title();
                     break;
+                case "LEADERBOARD":
+                    screen.leaderboard();
+                    break;
+                case "INSTRUCTIONS":
+                    screen.instructions();
+                    break;
                 default:
                     System.out.println("Invalid input");
                     break;
             }
         }
-
     }
 }

@@ -1,0 +1,77 @@
+.BackgroundPink
+{
+    background-color: #e0c2b8;
+}
+/*-------------------------------------------------------------NAVBAR--------------------------------*/
+ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li
+{
+    float: left;
+}
+li#dropdownMenu
+{
+    display: inline-block;
+}
+.navbar
+{
+    overflow: hidden;
+    background-color: #F0DDD7;
+    display: block;
+}
+
+
+.BackgroundPink body #titleDiv
+{
+    display: block;
+    height: 80px;
+}
+
+.dropDownContent
+{
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.dropDownContent a
+{
+    display: block;
+    border: 2px #ffb790;
+}
+#dropdownMenu:hover .dropDownContent
+{
+    display: block;
+}
+
+.buttons
+{
+    font-style: italic;
+    font-family: "Ink Free", sans-serif ;
+    font-weight: bold;
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 14px;
+    text-decoration: none;
+    color: black;
+}
+.buttons:hover
+{
+    background-color: #dbafa0;
+}
+/*----------------------------------------------------------------------------------------*/
+.BackgroundPink body div .title
+{
+    font-style: italic;
+    font-family: "Ink Free", sans-serif ;
+    text-align: center;
+    font-size: 70px;
+}

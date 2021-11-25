@@ -23,6 +23,9 @@ public class Main {
                 case "INSTRUCTIONS":
                     screen.instructions();
                     break;
+                case "RULES":
+                    screen.rules();
+                    break;
                 default:
                     System.out.println("Invalid input");
                     break;

@@ -2,9 +2,7 @@ package classes;
 
 public class Screens {
     public Screens() {
-
     }
-
     public void display_game_board() {
         System.out.println
                 ("+----------------------------------------------------------------------------------------------------------------+\t\t\t\t\t\t\t\n" +
@@ -80,7 +78,7 @@ public class Screens {
     public void instructions () {
         System.out.println
                 ("+----------------------------------------------------------------------------------------+\n" +
-                        "|                                           COMMANDS                                     |\n" +
+                        "|   HOME                                    COMMANDS                                     |\n" +
                         "|                        ### Use arrow up to move the boxes upward ###                   |\n" +
                         "|                        ### Use arrow down to move the boxes down ###                   |\n" +
                         "|                      ### Use the arrow left to move all boxes left ###                 |\n" +

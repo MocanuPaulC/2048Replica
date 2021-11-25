@@ -1,5 +1,6 @@
 import classes.Screens;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,7 @@ public class Main {
         while (true) {
             System.out.println("Write button desired");
             String button = scanner.nextLine();
-            switch (button) {
+            switch (button.toUpperCase()) {
                 case "START GAME":
                     screen.display_game_board();
                     break;

@@ -1,7 +1,4 @@
-import classes.Date;
-import classes.Score;
-import classes.Screens;
-import classes.Square;
+import classes.*;
 
 import java.lang.invoke.SwitchPoint;
 import java.util.Scanner;
@@ -11,18 +8,19 @@ public class game2048 {
         final Scanner scanner = new Scanner(System.in);
         Screens screen = new Screens();
 
-        Square square =new Square();
-        square.getArray();
-/*
-        for (int i = 0; i < MAXLENGTH; i++) {
+        //Board board = new Board();
+        //board.initialiseSquares();
+        //board.getArrayStart();
+        Score score =new Score();
+        score.setScore();
+
+      /*  for (int i = 0; i < MAXLENGTH; i++) {
             for (int j = 0; j < MAXLENGTH; j++) {
-                System.out.printf("[%d, %d ,%d]",values[i][j].getValue(),values[i][j].getX(),values[i][j].getY());
+                System.out.printf("[%d, %d ,%d]", values[i][j].getValue(), values[i][j].getX(), values[i][j].getY());
             }
             System.out.println();
-        }*/
-
-
-
+        }
+*/
 
         screen.display_title();
         while (true) {

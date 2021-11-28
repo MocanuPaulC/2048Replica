@@ -7,7 +7,7 @@ public class Square {
     private int y;
     private int value;
     private final int MAXLENGTH = 4;
-    private final Square[][] values = new Square[MAXLENGTH][MAXLENGTH];
+    private Object[][] values = new Object[MAXLENGTH][MAXLENGTH];
     //-------------------------------------------------------GETTER
 
     public int getX() {
@@ -45,29 +45,15 @@ public class Square {
     }
 
 
-    public void setReset() {
-        for (int i = 0; i < MAXLENGTH; i++) {
-            for (int j = 0; j < MAXLENGTH; j++) {
-                //THIS IS TO RESET THE GAME AND PUT ALL VALUES ON 0
-                values[i][j] = new Square(i,j,1);
-            }
-        }
-    }
-
-    public void getArray()
-    {
-        //THIS IS TO GET THE VALUES FROM ALL SQUARES TO CALCULATE THE SCORE
-        Square square = new Square();
-        square.setReset();
-        for (int i = 0; i < values.length; i++) {
-            for (int j = 0; j < values.length; j++) {
-                System.out.println(values[i][j]);
-
-            }
-
-        }
-    }
     //---------------------------------------------------
 
 
+    @Override
+    public String toString() {
+        return "Square{" +
+                "x=" + x +
+                ", y=" + y +
+                ", value=" + value +
+                '}';
+    }
 }

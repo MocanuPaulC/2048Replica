@@ -3,25 +3,39 @@ package classes;
 public class Screens {
     public Screens() {
     }
-    public void display_game_board() {
-        System.out.println
-                ("+----------------------------------------------------------------------------------------------------------------+\t\t\t\t\t\t\t\n" +
-                        "|\t\t\t\t\t\t\t\t                                        _______________________________\t\t\t |\t\t\t\t\t\n" +
-                        "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t|       |       |      |      |          |\n" +
-                        "|\t\t\t\t\t\t\t\t\t\t\t\t\t                    |       |       |      |      |          |                        \n" +
-                        "|\t\t\t\t\tRESTART                                             |_______|_______|______|______|          |\n" +
-                        "|\t\t\t      CURRENT SCORE\t\t\t\t\t\t\t                |       |       |      |      |          |\n" +
-                        "|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\t    |\t    |      |      |          |\n" +
-                        "|\t\t\t        TOP SCORE\t\t\t\t\t\t\t\t\t\t\t|_______|_______|______|______|          |\n" +
-                        "|\t\t\t\t\t\t\t\t\t                                    |       |       |      |      |\t         |\n" +
-                        "|\tSAVE GAME\t\tEND GAME\t\tLOAD GAME                           |       |       |      |      |          |\n" +
-                        "|                                                                       |_______|_______|______|______|          |\n" +
-                        "|                                                                       |       |       |      |      |          |\n" +
-                        "|                                                                       |       |       |      |      |          |\n" +
-                        "|                                                                       |_______|_______|______|______|          |\n" +
-                        "|                                                                                                                |\n" +
-                        "+----------------------------------------------------------------------------------------------------------------+\n");
 
+    public void display_game_board() {
+        Board board = new Board(true);
+        Square[][] square = board.getArrayStart();
+        board.setRandomValues();
+        for (int i = 0; i < square.length; i++) {
+            if (i == 0) {
+                //TOP BAR FOR LAYOUT
+                System.out.print("+----------------------------------------------------------------------------------------------------------------+\t\t\t\t\t\t\t\n" +
+                        "|\t\t\t\t\t\t\t\t                                                                       \t\t\t |\t\t\t\t\t\n");
+            }
+            System.out.print("|");
+            for (int j = 0; j < square.length; j++) {
+                //THE NUMBER GRID
+                System.out.printf("\t\t\t\t\t%d", square[i][j].getValue());
+                //LAYOUT
+                if (j == 3) {
+                    System.out.print("\t\t\t\t\t\t\t\t |\n");
+                    if (i != 3) {
+                        System.out.println("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t |");
+                        System.out.println("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t |");
+                    }
+                }
+            }
+            if (i == 3) {
+                { //BAR ON THE BOTTOM FOR LAYOUT
+                    System.out.println("                                                                                \n" +
+                            "|                                                                                                                |\n" +
+                            "+----------------------------------------------------------------------------------------------------------------+\n");
+                }
+            }
+            System.out.println();
+        }
     }
 
     public void display_title() {
@@ -75,7 +89,7 @@ public class Screens {
 
     }
 
-    public void instructions () {
+    public void instructions() {
         System.out.println
                 ("+----------------------------------------------------------------------------------------+\n" +
                         "|   HOME                                    COMMANDS                                     |\n" +

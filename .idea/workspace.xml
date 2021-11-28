@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7b906ba-3b93-4f1c-8d2b-2a0fc8b2955e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/Square.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game2048.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +70,7 @@
       <workItem from="1637570731055" duration="30000" />
       <workItem from="1637941158342" duration="2071000" />
       <workItem from="1638019355712" duration="331000" />
-      <workItem from="1638020430012" duration="6979000" />
+      <workItem from="1638020430012" duration="7296000" />
     </task>
     <servers />
   </component>
@@ -92,5 +88,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

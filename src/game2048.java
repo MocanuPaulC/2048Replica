@@ -28,6 +28,7 @@ public class game2048 {
             String button = scanner.nextLine();
             switch (button.toUpperCase()) {
                 case "START GAME":
+
                     screen.display_game_board();
                     break;
                 case "HOME":

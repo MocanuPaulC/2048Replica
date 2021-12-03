@@ -50,7 +50,7 @@ public class Screens {
                         "|                             |\n" +
                         "|                             |\n" +
                         "|   START GAME  LEADERBOARD   |\n" +
-                        "|   LOAD GAME                 |\n" +
+                        "|   LOAD GAME   INSTRUCTIONS  |\n" +
                         "|                             |\n" +
                         "+-----------------------------+");
 

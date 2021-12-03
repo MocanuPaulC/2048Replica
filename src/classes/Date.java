@@ -15,10 +15,9 @@ public class Date {
     public void setDate(String input) {
         if (input.length() == 0) {
             //this is an auto current date generator with a check for no inputs from the user
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd - ");
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd - HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
             this.Date = dtf.format(now);
-
         } else {
             System.out.println(toString());
         }

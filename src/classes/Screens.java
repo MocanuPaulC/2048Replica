@@ -1,12 +1,20 @@
 package classes;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
 public class Screens {
+    DB_manipulator db_manipulator = new DB_manipulator();
+
     public Screens() {
     }
 
     public void display_game_board(Square[][] square) {
         Board board = new Board(true);
         board.setBoardState(true);
+
 
         board.setRandomValues(square);
         for (int i = 0; i < square.length; i++) {
@@ -57,22 +65,47 @@ public class Screens {
 
     }
 
-    public void leaderboard() {
-        System.out.println
-                ("+--------------------------------+\n" +
-                        "|  HOME\t                         |\n" +
-                        "| \t   LEADERBOARD               |\n" +
-                        "|     1. NAME 123                |\n" +
-                        "|     2. NAME 456                |\n" +
-                        "|     3. NAME 789                |\n" +
-                        "|     4. ...                     |\n" +
-                        "|     5. ...                     |\n" +
-                        "|                                |\n" +
+    public void leaderboard(Connection connection) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a name to search for scores(type 'a' to see all scores)");
+        String input =  scanner.nextLine();
+        if(input.equals("a")) {
+            int score = 0;
+            String name = "";
+            String date = "";
+            int cnt = 1;
+            StringBuilder row = new StringBuilder();
+            ResultSet resultSet = DB_manipulator.getScores(connection);
+            try {
+
+                System.out.print
+                        ("+--------------------------------+\n" +
+                                "|  HOME\t                         |\n" +
+                                "| \t   LEADERBOARD               |\n");
+                while (resultSet.next()) {
+
+                    row.setLength(0);
+                    name = resultSet.getString(1);
+                    date = resultSet.getString(2);
+                    score = resultSet.getInt(3);
+                    row.append(cnt).append(". ").append(name).append(" ").append(score).append(" ").append(date);
+                    System.out.println("|     " + row.toString() + "      |");
+                    cnt++;
+                }
+                System.out.print("|                                |\n" +
                         "|                                |\n" +
                         "|      TYPE HOME TO GO HOME      |\n" +
                         "+--------------------------------+");
 
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+
+        }
     }
+
 
     public void rules() {
         System.out.println

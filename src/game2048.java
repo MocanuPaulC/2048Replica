@@ -1,14 +1,19 @@
 import classes.*;
 
 import java.lang.invoke.SwitchPoint;
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class game2048 {
     public static void main(String[] args) {
-        game2048Class game2048Class = new game2048Class();
-        Board board = new Board();
-        int started=0;
+        String name;
         final Scanner scanner = new Scanner(System.in);
+        System.out.println("Input name:");
+        name =scanner.nextLine();
+
+        int started=0;
+        Connection connection = DB_manipulator.initializeDatabase();
+        game2048Class game2048Class = new game2048Class(name,connection);
         Screens screen = new Screens();
 
         //Board board = new Board();
@@ -16,14 +21,6 @@ public class game2048 {
         //board.getArrayStart();
         Score score =new Score();
         score.setScore();
-
-      /*  for (int i = 0; i < MAXLENGTH; i++) {
-            for (int j = 0; j < MAXLENGTH; j++) {
-                System.out.printf("[%d, %d ,%d]", values[i][j].getValue(), values[i][j].getX(), values[i][j].getY());
-            }
-            System.out.println();
-        }
-*/
 
         screen.display_title();
         while (true) {
@@ -44,6 +41,8 @@ public class game2048 {
                     break;
                 case "START GAME":
                     if(started==0) {
+
+                        game2048Class.setScore(0);
                         started=1;
                         int counter = 0;
                         if (counter == 0 ){
@@ -58,13 +57,16 @@ public class game2048 {
                     screen.display_title();
                     break;
                 case "LEADERBOARD":
-                    screen.leaderboard();
+                    screen.leaderboard(connection);
                     break;
                 case "INSTRUCTIONS":
                     screen.instructions();
                     break;
                 case "RULES":
                     screen.rules();
+                    break;
+                case "INSERT":
+                    DB_manipulator.insertValues(connection,123,"Paul","2021-12-03");
                     break;
                 default:
                     System.out.println("Invalid input");

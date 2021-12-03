@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7b906ba-3b93-4f1c-8d2b-2a0fc8b2955e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2048.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2048.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/game2048Class.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/game2048Class.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/square.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/game2048.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/game2048.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Date.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Screens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Screens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Square.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/game2048Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/game2048Class.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game2048.java" afterDir="false" />
     </list>
@@ -48,17 +51,18 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/Mijn Drive/ACS102A Hermans Elliot/Programming" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/postgresql-42.3.1.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration name="game2048" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

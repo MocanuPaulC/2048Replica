@@ -8,6 +8,10 @@ public class Board {
     private Square[][] values = new Square[MAXLENGTH][MAXLENGTH];
     private final Random random = new Random();
 
+    public int getMAXLENGTH() {
+        return MAXLENGTH;
+    }
+
     public boolean isBoardState() {
         return boardState;
     }
@@ -35,12 +39,15 @@ public class Board {
         }
     }
 
-    public void setRandomValues() {
+    public void setRandomValues(Square[][] square) {
         //THIS IS TO RESET THE GAME AND PUT ALL VALUES ON 0
+        values=square;
         int x;
         int y;
         final int origin = 0;
         final int bound = 4;
+
+        System.out.println("here works1");
         for (int i = 0; i < 2; i++) {
             while (true) {
                 x = random.nextInt(origin, bound);
@@ -48,13 +55,15 @@ public class Board {
                 if (values[x][y].getValue() == 0) {
                     //sets value to random choice of 2 or 4
                         if (random.nextInt(1, 3) == 1) {
-
+                            System.out.println("here works2");
                             values[x][y].setValue(2);
+                            System.out.println(values[x][y].getValue());
 
                         } else {
                             values[x][y].setValue(4);
+                            System.out.println("here Staworks3");
                         }
-                    //
+                    System.out.println("here works4");
                     break;
                 }
             }

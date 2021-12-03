@@ -4,10 +4,11 @@ public class Screens {
     public Screens() {
     }
 
-    public void display_game_board() {
+    public void display_game_board(Square[][] square) {
         Board board = new Board(true);
-        Square[][] square = board.getArrayStart();
-        board.setRandomValues();
+        board.setBoardState(true);
+
+        board.setRandomValues(square);
         for (int i = 0; i < square.length; i++) {
             if (i == 0) {
                 //TOP BAR FOR LAYOUT

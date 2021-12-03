@@ -7,7 +7,6 @@ public class Square {
     private int y;
     private int value;
     private final int MAXLENGTH = 4;
-    private Object[][] values = new Object[MAXLENGTH][MAXLENGTH];
     //-------------------------------------------------------GETTER
 
     public int getX() {

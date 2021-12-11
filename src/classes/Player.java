@@ -8,7 +8,7 @@ public class Player {
     }
 
     public void setName(String name) {
-        if (this.name.length() >= 3) {
+        if (name.length() >0 && name.length() <=50) {
             this.name = name;
         }else
         {

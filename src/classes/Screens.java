@@ -20,27 +20,35 @@ public class Screens {
         for (int i = 0; i < square.length; i++) {
             if (i == 0) {
                 //TOP BAR FOR LAYOUT
-                System.out.print("+----------------------------------------------------------------------------------------------------------------+\t\t\t\t\t\t\t\n" +
-                        "|\t\t\t\t\t\t\t\t                                                                       \t\t\t |\t\t\t\t\t\n");
+                System.out.print("+-----------------------+\n" +
+                        "|\t  |\t    |\t  |\t    |\n");
             }
             System.out.print("|");
             for (int j = 0; j < square.length; j++) {
                 //THE NUMBER GRID
-                System.out.printf("\t\t\t\t\t%d", square[i][j].getValue());
+                if(j<3) {
+                    System.out.printf(" %-4d|", square[i][j].getValue());
+                }
+                else{
+                    System.out.printf("\t%-4d", square[i][j].getValue());
+                }
                 //LAYOUT
                 if (j == 3) {
-                    System.out.print("\t\t\t\t\t\t\t\t |\n");
+                    System.out.print("|\n");
                     if (i != 3) {
-                        System.out.println("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t |");
-                        System.out.println("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t |");
+
+                        System.out.print("|\t  |\t    |\t  |\t    |\n");
+                        System.out.print("+-----------------------+\n");
+                        System.out.print("|\t  |\t    |\t  |\t    |");
+
                     }
                 }
             }
             if (i == 3) {
                 { //BAR ON THE BOTTOM FOR LAYOUT
-                    System.out.println("                                                                                \n" +
-                            "|                                                                                                                |\n" +
-                            "+----------------------------------------------------------------------------------------------------------------+\n");
+                    System.out.print(
+                            "|\t  |\t    |\t  |\t    |\n" +
+                            "+-----------------------+\n");
                 }
             }
             System.out.println();

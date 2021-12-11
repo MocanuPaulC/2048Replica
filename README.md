@@ -10,8 +10,8 @@ A replica of the game 2048
 ```
 cd existing_repo
 git remote add origin https://gitlab.com/kdg-ti/integration-1.1/2021-2022/acs102a-group-13/2048.git
-git branch -M main
-git push -uf origin main
+git branch -M Main
+git push -uf origin Main
 ```
 
 elliot hermans was here

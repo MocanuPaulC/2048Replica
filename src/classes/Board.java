@@ -7,7 +7,7 @@ public class Board {
     private final int MAXLENGTH = 4;
     private Square[][] values = new Square[MAXLENGTH][MAXLENGTH];
     private final Random random = new Random();
-
+    private int count=0;
     public int getMAXLENGTH() {
         return MAXLENGTH;
     }
@@ -38,37 +38,54 @@ public class Board {
             }
         }
     }
+    public int getCountSquares(){
+        count=0;
+        for (int i = 0; i < MAXLENGTH; i++) {
+            for (int j = 0; j < MAXLENGTH; j++) {
+                if(values[i][j].getValue()!=0)count++;
+
+            }
+        }
+        return count;
+    }
 
     public void setRandomValues(Square[][] square) {
         //THIS IS TO RESET THE GAME AND PUT ALL VALUES ON 0
-        values=square;
+        values = square;
+        int cnt = getCountSquares();
+        if (cnt <= 14) {
+            for (int i = 0; i < 2; i++) {
+                RandomiseSquares();
+            }
+
+        }
+        else if(cnt == 15){
+            RandomiseSquares();
+        }
+    }
+
+    public void RandomiseSquares() {
+        int origin = 0;
+        int bound = 4;
         int x;
         int y;
-        final int origin = 0;
-        final int bound = 4;
+        while (true) {
+            x = random.nextInt(origin, bound);
+            y = random.nextInt(origin, bound);
+            if (values[x][y].getValue() == 0) {
+                //sets value to random choice of 2 or 4
+                if (random.nextInt(1, 3) == 1) {
 
-        System.out.println("here works1");
-        for (int i = 0; i < 2; i++) {
-            while (true) {
-                x = random.nextInt(origin, bound);
-                y = random.nextInt(origin, bound);
-                if (values[x][y].getValue() == 0) {
-                    //sets value to random choice of 2 or 4
-                        if (random.nextInt(1, 3) == 1) {
-                            System.out.println("here works2");
-                            values[x][y].setValue(2);
-                            System.out.println(values[x][y].getValue());
+                    values[x][y].setValue(2);
 
-                        } else {
-                            values[x][y].setValue(4);
-                            System.out.println("here Staworks3");
-                        }
-                    System.out.println("here works4");
-                    break;
+                } else {
+                    values[x][y].setValue(4);
+
                 }
+
+                break;
             }
         }
-
     }
 
     public void setReset() {

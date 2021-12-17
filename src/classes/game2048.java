@@ -161,17 +161,30 @@ public class game2048 {
 
     public void endGame(Connection connection) {
         DB_manipulator.insertValues(connection, score.getScore(), getName());
-        System.out.printf("Game over score: %d name: %s \n", score.getScore(), getName());
-        ResultSet resultSet = DB_manipulator.getScores(connection);
+        ResultSet resultSet = DB_manipulator.getScoresTable(connection);
+        String highscorePlayerDate="";
+        int highscorePlayer=0;
+        String highscoreTableName="";
+        String highscoreTableDate="";
+        int highscoreTable=0;
         try {
             while (resultSet.next()) {
-                System.out.println("High score:" + resultSet.getString(1) + " " + resultSet.getString(2) + " " + resultSet.getInt(3));
+                highscoreTableName=resultSet.getString(1);
+                highscoreTableDate=resultSet.getString(2);
+                highscoreTable=resultSet.getInt(3);
+                break;
+            }
+            resultSet = DB_manipulator.getScoresName(connection,getName());
+            while (resultSet.next()) {
+                highscorePlayerDate=resultSet.getString(2);
+                highscorePlayer=resultSet.getInt(3);
                 break;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         System.out.println();
+        screen.display_end_game(score.getScore(),highscoreTable,highscorePlayer,getName(),highscoreTableName,highscoreTableDate,highscorePlayerDate);
         board.setBoardState(false);
     }
 

@@ -61,7 +61,14 @@ public class Main {
                     break;
                 case "LEADERBOARD":
                     if(!game2048.getBoard().isBoardState()){
-                        screen.leaderboard(connection);
+                        System.out.println("Enter a name to search for scores(type 'a' to see all scores)");
+                        String input =  scanner.nextLine();
+                        if(input.equals("a")) {
+                            screen.leaderboard(connection,DB_manipulator.getScoresTable(connection));
+                        }
+                        else {
+                            screen.leaderboard(connection,DB_manipulator.getScoresName(connection,input));
+                        }
                     }
                     break;
                 case "INSTRUCTIONS":

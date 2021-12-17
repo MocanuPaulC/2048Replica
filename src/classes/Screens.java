@@ -15,7 +15,6 @@ public class Screens {
         Board board = new Board(true);
         board.setBoardState(true);
 
-        System.out.println("Wireframe <gameboard>");
 
         board.setRandomValues(square);
         System.out.println("Type restart to restart the game");
@@ -30,10 +29,9 @@ public class Screens {
             System.out.print("|");
             for (int j = 0; j < square.length; j++) {
                 //THE NUMBER GRID
-                if(j<3) {
+                if (j < 3) {
                     System.out.printf(" %-4d|", square[i][j].getValue());
-                }
-                else{
+                } else {
                     System.out.printf("\t%-4d", square[i][j].getValue());
                 }
                 //LAYOUT
@@ -52,23 +50,22 @@ public class Screens {
                 { //BAR ON THE BOTTOM FOR LAYOUT
                     System.out.print(
                             "|\t  |\t    |\t  |\t    |\n" +
-                            "+-----------------------+\n");
+                                    "+-----------------------+\n");
                 }
             }
             System.out.println();
 
         }
         System.out.println("""
-                    Type up to move the boxes upward
-                    Type down to move the boxes down
-                    Type left to move all boxes left
-                    Type right to move all boxes right""");
+                Type up to move the boxes upward
+                Type down to move the boxes down
+                Type left to move all boxes left
+                Type right to move all boxes right""");
     }
 
     public void display_title() {
         System.out.println
                 ("""
-                        Wireframe <title page>
                         +-------------------------------------------+
                         |                                           |
                         |                    2048                   |
@@ -93,45 +90,35 @@ public class Screens {
 
     }
 
-    public void leaderboard(Connection connection) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a name to search for scores(type 'a' to see all scores)");
-        String input =  scanner.nextLine();
-        if(input.equals("a")) {
-            int score = 0;
-            String name = "";
-            String date = "";
-            int cnt = 1;
-            StringBuilder row = new StringBuilder();
-            ResultSet resultSet = DB_manipulator.getScores(connection);
-            try {
-                System.out.println("Wireframe <leaderboard>");
+    public void leaderboard(Connection connection, ResultSet resultSet) {
+        int score = 0;
+        String name = "";
+        String date = "";
+        int cnt = 1;
+        StringBuilder row = new StringBuilder();
+        try {
 
-                System.out.print
-                        ("+-----------------------------------+\n" +
-                                "|    LEADERBOARD \t                |\n" +
-                                "| \t                                |\n");
-                while (resultSet.next()) {
-
-                    row.setLength(0);
-                    name = resultSet.getString(1);
-                    date = resultSet.getString(2);
-                    score = resultSet.getInt(3);
-                    row.append(cnt).append(". ").append(name).append(" ").append(score).append(" ").append(date);
-                    System.out.printf("| %-34s|\n", row);
-                    cnt++;
-                }
-                System.out.print("|                                   |\n" +
-                        "|                                   |\n" +
-                        "|      TYPE HOME TO GO HOME         |\n" +
-                        "+-----------------------------------+\n");
-
-            } catch (SQLException e) {
-                e.printStackTrace();
+            System.out.print
+                    ("+-----------------------------------+\n" +
+                            "|    LEADERBOARD \t                |\n" +
+                            "| \t                                |\n");
+            while (resultSet.next()) {
+//row.setLength resets the row to an empty string so that we can reuse it
+                row.setLength(0);
+                name = resultSet.getString(1);
+                date = resultSet.getString(2);
+                score = resultSet.getInt(3);
+                row.append(cnt).append(". ").append(name).append(" ").append(score).append(" ").append(date);
+                System.out.printf("| %-34s|\n", row);
+                cnt++;
             }
-        }
-        else {
+            System.out.print("|                                   |\n" +
+                    "|                                   |\n" +
+                    "|      TYPE HOME TO GO HOME         |\n" +
+                    "+-----------------------------------+\n");
 
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -139,7 +126,6 @@ public class Screens {
     public void rules() {
         System.out.println
                 ("""
-                        Wireframe <rules>
                         +----------------------------------------------------------------------------------------+
                         |                      ### The goal of the game is to reach 2048 ###                     |
                         |                                                                                        |
@@ -158,7 +144,6 @@ public class Screens {
     public void instructions() {
         System.out.println
                 ("""
-                        Wireframe <commands>
                         +------------------------------------------------------------------------------------------+
                         |                                           COMMANDS                                       |
                         |                      ### Use arrow up to move the boxes upward ###                       |
@@ -174,5 +159,38 @@ public class Screens {
 
 
     }
+
+    public void display_end_game(int score, int highscoreTable, int highscorePlayer, String player, String highscoreTableName, String dateTable, String datePlayer) {
+        System.out.println("""
+                +-----------------------------------------+
+                |                           	 	      |
+                |                Game Over          	  |
+                |                           		      |
+                |                 		 	              |
+                |                   GG      		      |
+                |               		                  |
+                |         Player name     Score           |""");
+        System.out.printf("|           %s             %-4d           |\n", player, score);
+        System.out.println("""
+                |                           		      |
+                |                Highscore:               |
+                |   Player name Score      Date           |""");
+        System.out.printf("|        %s      %-4d%s  |\n", highscoreTableName, highscoreTable, dateTable);
+        System.out.println("""
+                |                                         |
+                |            Personal Highscore:          |
+                |   Player name Score     Date            |""");
+        System.out.printf("|        %s      %-4d%s  |\n", player, highscorePlayer, datePlayer);
+        System.out.println("""
+                |                           		      |
+                |                           		      |
+                |           Hard           Home           |
+                |                           		      |
+                |                           		      |
+                +-----------------------------------------+
+                Type hard to play again
+                Type home to go home""");
+    }
+
 }
 

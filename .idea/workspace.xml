@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7b906ba-3b93-4f1c-8d2b-2a0fc8b2955e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efbb4698-2334-42bb-b8c7-46e6297dbc97.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efbb4698-2334-42bb-b8c7-46e6297dbc97.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2048game.zip" beforeDir="false" afterPath="$PROJECT_DIR$/2048game.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INTEGRATION_1.1_Leader_board_Deliverable.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2048/classes/DB_manipulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/DB_manipulator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/DB_manipulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DB_manipulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Date.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Score.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Screens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Screens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/game2048Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/game2048.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +95,10 @@
       <workItem from="1638907136413" duration="7000" />
       <workItem from="1639140329622" duration="5991000" />
       <workItem from="1639212340951" duration="10775000" />
+      <workItem from="1639485752377" duration="297000" />
+      <workItem from="1639494581939" duration="8052000" />
+      <workItem from="1639607340353" duration="8000" />
+      <workItem from="1639727116688" duration="1993000" />
     </task>
     <servers />
   </component>
@@ -124,21 +118,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/classes/game2048.java</url>
-          <line>148</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/classes/game2048.java</url>
-          <line>165</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

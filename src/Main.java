@@ -74,6 +74,11 @@ public class Main {
                         screen.rules();
                     }
                     break;
+                case "STOP":
+                    if(game2048.getBoard().isBoardState()) {
+                        game2048.getBoard().setBoardState(false);
+                        screen.display_title();
+                    }
                 default:
                     System.out.println("Invalid input");
                     break;

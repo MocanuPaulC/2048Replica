@@ -15,8 +15,12 @@ public class Screens {
         Board board = new Board(true);
         board.setBoardState(true);
 
+        System.out.println("Wireframe <gameboard>");
 
         board.setRandomValues(square);
+        System.out.println("Type restart to restart the game");
+        System.out.println("Type save game to save the current state of the game");
+
         for (int i = 0; i < square.length; i++) {
             if (i == 0) {
                 //TOP BAR FOR LAYOUT
@@ -52,24 +56,40 @@ public class Screens {
                 }
             }
             System.out.println();
+
         }
+        System.out.println("""
+                    Type up to move the boxes upward
+                    Type down to move the boxes down
+                    Type left to move all boxes left
+                    Type right to move all boxes right""");
     }
 
     public void display_title() {
         System.out.println
-                ("+-----------------------------+\n" +
-                        "|                             |\n" +
-                        "|            2048             |\n" +
-                        "|          THE GAME           |\n" +
-                        "|                             |\n" +
-                        "|          GROUP 13           |\n" +
-                        "|                             |\n" +
-                        "|                             |\n" +
-                        "|                             |\n" +
-                        "|   START GAME  LEADERBOARD   |\n" +
-                        "|   LOAD GAME   INSTRUCTIONS  |\n" +
-                        "|                             |\n" +
-                        "+-----------------------------+");
+                ("""
+                        Wireframe <title page>
+                        +-------------------------------------------+
+                        |                                           |
+                        |                    2048                   |
+                        |                  THE GAME                 |
+                        |                                           |
+                        |                  GROUP 13                 |
+                        |                                           |
+                        |                                           |
+                        |                                           |
+                        |           START GAME  LEADERBOARD         |
+                        |                  LOAD GAME                |
+                        |                                           |
+                        |                                           |
+                        |      TYPE START GAME TO START PLAYING     |
+                        |     TYPE LOAD GAME TO GO TO LOAD A GAME   |
+                        |         TYPE RULES TO GO TO RULES         |
+                        |  TYPE INSTRUCTIONS TO GO TO INSTRUCTIONS  |
+                        |   TYPE LEADERBOARD TO GO TO LEADERBOARD   |
+                        |                                           |
+                        |                                           |
+                        +-------------------------------------------+""");
 
     }
 
@@ -85,11 +105,12 @@ public class Screens {
             StringBuilder row = new StringBuilder();
             ResultSet resultSet = DB_manipulator.getScores(connection);
             try {
+                System.out.println("Wireframe <leaderboard>");
 
                 System.out.print
-                        ("+--------------------------------+\n" +
-                                "|  HOME\t                         |\n" +
-                                "| \t   LEADERBOARD               |\n");
+                        ("+-----------------------------------+\n" +
+                                "|    LEADERBOARD \t                |\n" +
+                                "| \t                                |\n");
                 while (resultSet.next()) {
 
                     row.setLength(0);
@@ -97,13 +118,13 @@ public class Screens {
                     date = resultSet.getString(2);
                     score = resultSet.getInt(3);
                     row.append(cnt).append(". ").append(name).append(" ").append(score).append(" ").append(date);
-                    System.out.println("|     " + row.toString() + "      |");
+                    System.out.printf("| %-34s|\n", row);
                     cnt++;
                 }
-                System.out.print("|                                |\n" +
-                        "|                                |\n" +
-                        "|      TYPE HOME TO GO HOME      |\n" +
-                        "+--------------------------------+");
+                System.out.print("|                                   |\n" +
+                        "|                                   |\n" +
+                        "|      TYPE HOME TO GO HOME         |\n" +
+                        "+-----------------------------------+\n");
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -117,32 +138,39 @@ public class Screens {
 
     public void rules() {
         System.out.println
-                ("+----------------------------------------------------------------------------------------+\n" +
-                        "|  HOME                ### The goal of the game is to reach 2048 ###                     |\n" +
-                        "|                                                                                        |\n" +
-                        "|  ### the boxes with the same value will add eachother when you swipe them together ### |\n" +
-                        "|  ### two boxes with different values will not be added ###                             |\n" +
-                        "|  ### if there are no spaces left you lose ###                                          |\n" +
-                        "|                                                                                        |\n" +
-                        "+--------------------------------------------------------------------------------------- +\n" +
-                        "\n" +
-                        "\n");
+                ("""
+                        Wireframe <rules>
+                        +----------------------------------------------------------------------------------------+
+                        |                      ### The goal of the game is to reach 2048 ###                     |
+                        |                                                                                        |
+                        |  ### the boxes with the same value will add eachother when you swipe them together ### |
+                        |  ### two boxes with different values will not be added ###                             |
+                        |  ### if there are no spaces left you lose ###                                          |
+                        |                                                                                        |
+                        |                                                                                        |
+                        |                               TYPE HOME TO GO TO HOME                                  |
+                        +--------------------------------------------------------------------------------------- +
+                        """);
 
 
     }
 
     public void instructions() {
         System.out.println
-                ("+----------------------------------------------------------------------------------------+\n" +
-                        "|   HOME                                    COMMANDS                                     |\n" +
-                        "|                        ### Use arrow up to move the boxes upward ###                   |\n" +
-                        "|                        ### Use arrow down to move the boxes down ###                   |\n" +
-                        "|                      ### Use the arrow left to move all boxes left ###                 |\n" +
-                        "|                     ### Use the arrow right to move all boxes right ###                |\n" +
-                        "|              ### Type the corresponding word in order to utilise the button ###        |\n" +
-                        "|                                                                                        |\n" +
-                        "|                                                                                        |\n" +
-                        "+----------------------------------------------------------------------------------------+\n");
+                ("""
+                        Wireframe <commands>
+                        +------------------------------------------------------------------------------------------+
+                        |                                           COMMANDS                                       |
+                        |                      ### Use arrow up to move the boxes upward ###                       |
+                        |                      ### Use arrow down to move the boxes down ###                       |
+                        |                    ### Use the arrow left to move all boxes left ###                     |
+                        |                   ### Use the arrow right to move all boxes right ###                    |
+                        |            ### Type the corresponding word in order to utilise the button ###            |
+                        |                                                                                          |
+                        |                                                                                          |
+                        |                                    TYPE HOME TO GO TO HOME                               |
+                        +------------------------------------------------------------------------------------------+
+                        """);
 
 
     }

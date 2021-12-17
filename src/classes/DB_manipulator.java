@@ -34,7 +34,7 @@ public class DB_manipulator {
     public static ResultSet getScores(Connection connection){
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM int_leaderboard ORDER BY score DESC FETCH FIRST 5 ROWS ONLY ");
+            ResultSet resultSet = statement.executeQuery("SELECT name, to_char(date_of_play,'YYYY-MM-DD HH:MI:SS'),score FROM int_leaderboard ORDER BY score DESC FETCH FIRST 5 ROWS ONLY ");
             return resultSet;
         }
         catch (SQLException e){

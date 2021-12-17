@@ -1,0 +1,29 @@
+
+main table tr td figure img
+{
+    width: 300px;
+}
+main table tr td
+{
+    width: 50%;
+    text-align: center;
+}
+main table tr:first-of-type,main table tr:nth-of-type(3)
+{
+    background-color: lightgray;
+}
+main table tr:nth-of-type(2),main table tr:nth-of-type(4)
+{
+
+    background-color: #1F2937;
+    color: white;
+
+}
+
+
+table
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

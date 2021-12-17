@@ -33,7 +33,9 @@ nav .dropdownMenu li #dropDownTags
     display: none;
     position: absolute;
     z-index: 2;
+    list-style-type: none;
 }
+
 nav .dropdownMenu li:hover #dropDownTags
 {
     display: block;
@@ -57,8 +59,8 @@ nav .buttons::before
     content: '';
     display: block;
     height: 0.25em;
-    width: 0%;
     background-color: #1F2937;
+    width: 0%;
     transition: all ease-in-out 400ms;
     bottom: 0.5em;
 }

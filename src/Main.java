@@ -74,10 +74,20 @@ public class Main {
                         screen.rules();
                     }
                     break;
-                case "STOP":
+                case "QUIT":
                     if(game2048.getBoard().isBoardState()) {
+                        System.out.println("Do you want to save the game before quitting?");
+                        String answer = scanner.nextLine();
+                        if(answer.equals("yes") || answer.equals("y")){
+                            game2048.getBoard().setBoardState(false);
+                            screen.display_title();
+
+                        }
                         game2048.getBoard().setBoardState(false);
                         screen.display_title();
+                    }
+                    else{
+                        return;
                     }
                 default:
                     System.out.println("Invalid input");

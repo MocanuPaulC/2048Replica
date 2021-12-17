@@ -35,55 +35,23 @@ public class game2048 {
         Square[][] squares = board.getArray();
         for (int i = 0; i < board.getMAXLENGTH(); i++) {
             for (int j = 0; j < board.getMAXLENGTH(); j++) {
-                if (squares[i][j].getValue() != 0) {
-                    if (i == 0) {
-                        if (j == 0) {
-                            if (squares[i][j].getValue() == squares[i + 1][j].getValue() || squares[i][j].getValue() == squares[i][j + 1].getValue()) {
-                                return;
-                            }
-                        } else if (j == 3) {
-                            if (squares[i][j].getValue() == squares[i + 1][j].getValue() || squares[i][j].getValue() == squares[i][j - 1].getValue()) {
-                                return;
-                            }
-                        } else {
-                            if (squares[i][j].getValue() == squares[i + 1][j].getValue() || squares[i][j].getValue() == squares[i][j + 1].getValue() || squares[i][j].getValue() == squares[i][j - 1].getValue()) {
-                                return;
-                            }
-                        }
 
-                    }
-                    else if(i==3){
-                        if (j == 0) {
-                            if (squares[i][j].getValue() == squares[i - 1][j].getValue() || squares[i][j].getValue() == squares[i][j + 1].getValue()) {
-                                return;
-                            }
-                        } else if (j == 3) {
-                            if (squares[i][j].getValue() == squares[i - 1][j].getValue() || squares[i][j].getValue() == squares[i][j - 1].getValue()) {
-                                return;
-                            }
-                        } else {
-                            if (squares[i][j].getValue() == squares[i - 1][j].getValue() || squares[i][j].getValue() == squares[i][j + 1].getValue() || squares[i][j].getValue() == squares[i][j - 1].getValue()) {
-                                return;
-                            }
-                        }
-                    }
-                    else {
-                        if (j == 0) {
-                            if (squares[i][j].getValue() == squares[i - 1][j].getValue() || squares[i][j].getValue() == squares[i+1][j].getValue() || squares[i][j].getValue() == squares[i][j + 1].getValue()) {
-                                return;
-                            }
-                        } else if (j == 3) {
-                            if (squares[i][j].getValue() == squares[i - 1][j].getValue() ||squares[i][j].getValue() == squares[i + 1][j].getValue() || squares[i][j].getValue() == squares[i][j - 1].getValue()) {
-                                return;
-                            }
-                        } else {
-                            if (squares[i][j].getValue() == squares[i - 1][j].getValue() || squares[i][j].getValue() == squares[i][j + 1].getValue() || squares[i][j].getValue() == squares[i][j - 1].getValue()|| squares[i][j].getValue() == squares[i+1][j].getValue()) {
-                                return;
+                Square square = squares[i][j];
+                if (square.getValue() != 0) {
+
+                    for (int y = i - 1; y <= i + 1; y++) {
+                        for (int x = j - 1; x <= j + 1; x++) {
+                            if (!((y < i && x < j) || (y < i && x > j) || (y == i && x == j) || (y > i && x < j) || (y > i && x > j))) {
+                                if (!(y < 0 || y >= board.getMAXLENGTH() || x < 0 || x >= board.getMAXLENGTH())) {
+                                    Square currentSquare = squares[y][x];
+                                    if (square.getValue() == currentSquare.getValue()) {
+                                        return;
+                                    }
+                                }
                             }
                         }
                     }
-                }
-                else {
+                } else {
                     return;
                 }
             }
@@ -193,11 +161,11 @@ public class game2048 {
 
     public void endGame(Connection connection) {
         DB_manipulator.insertValues(connection, score.getScore(), getName());
-        System.out.printf("Game over score: %d name: %s \n", score.getScore(),getName());
+        System.out.printf("Game over score: %d name: %s \n", score.getScore(), getName());
         ResultSet resultSet = DB_manipulator.getScores(connection);
         try {
             while (resultSet.next()) {
-                System.out.println("High score:" + resultSet.getString(1) +" "+ resultSet.getString(2) +" "+ resultSet.getInt(3));
+                System.out.println("High score:" + resultSet.getString(1) + " " + resultSet.getString(2) + " " + resultSet.getInt(3));
                 break;
             }
         } catch (SQLException e) {

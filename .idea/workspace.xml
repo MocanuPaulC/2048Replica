@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b7b906ba-3b93-4f1c-8d2b-2a0fc8b2955e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website2048/HTML/2048.html" beforeDir="false" afterPath="$PROJECT_DIR$/Website2048/HTML/2048.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website2048/HTML/Css/group13.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website2048/HTML/Css/shared.css" beforeDir="false" afterPath="$PROJECT_DIR$/Website2048/HTML/Css/shared.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website2048/HTML/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Website2048/HTML/Index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/game2048.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +95,7 @@
       <workItem from="1639494581939" duration="8052000" />
       <workItem from="1639607340353" duration="8000" />
       <workItem from="1639727116688" duration="6688000" />
-      <workItem from="1639747660931" duration="335000" />
+      <workItem from="1639747660931" duration="3540000" />
     </task>
     <servers />
   </component>

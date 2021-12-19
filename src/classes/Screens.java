@@ -99,9 +99,11 @@ public class Screens {
         try {
 
             System.out.print
-                    ("+-----------------------------------+\n" +
-                            "|    LEADERBOARD \t                |\n" +
-                            "| \t                                |\n");
+                    ("""
+                            +-----------------------------------+
+                            |    LEADERBOARD \t                |
+                            | \t                                |
+                            """);
             while (resultSet.next()) {
 //row.setLength resets the row to an empty string so that we can reuse it
                 row.setLength(0);
@@ -112,10 +114,12 @@ public class Screens {
                 System.out.printf("| %-34s|\n", row);
                 cnt++;
             }
-            System.out.print("|                                   |\n" +
-                    "|                                   |\n" +
-                    "|      TYPE HOME TO GO HOME         |\n" +
-                    "+-----------------------------------+\n");
+            System.out.print("""
+                    |                                   |
+                    |                                   |
+                    |      TYPE HOME TO GO HOME         |
+                    +-----------------------------------+
+                    """);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -170,17 +174,18 @@ public class Screens {
                 |                   GG      		      |
                 |               		                  |
                 |         Player name     Score           |""");
-        System.out.printf("|           %s             %-4d           |\n", player, score);
+        System.out.printf("|%20s     %5d           |\n", player, score);
         System.out.println("""
                 |                           		      |
                 |                Highscore:               |
                 |   Player name Score      Date           |""");
-        System.out.printf("|        %s      %-4d%s  |\n", highscoreTableName, highscoreTable, dateTable);
+        System.out.printf("|%14s %5d  %s|\n",highscoreTableName,highscoreTable,dateTable);
         System.out.println("""
                 |                                         |
                 |            Personal Highscore:          |
                 |   Player name Score     Date            |""");
-        System.out.printf("|        %s      %-4d%s  |\n", player, highscorePlayer, datePlayer);
+
+        System.out.printf("|%14s %5d  %s|\n", player, highscorePlayer, datePlayer);
         System.out.println("""
                 |                           		      |
                 |                           		      |

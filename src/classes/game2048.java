@@ -38,6 +38,10 @@ public class game2048 {
 
                 Square square = squares[i][j];
                 if (square.getValue() != 0) {
+                    if(square.getValue()==2048){
+                        endGame(this.connection,true);
+                        return;
+                    }
 
                     for (int y = i - 1; y <= i + 1; y++) {
                         for (int x = j - 1; x <= j + 1; x++) {
@@ -57,7 +61,7 @@ public class game2048 {
             }
 
         }
-        endGame(this.connection);
+        endGame(this.connection,false);
     }
 
     //moving squares up
@@ -159,7 +163,7 @@ public class game2048 {
         checkEndGame();
     }
 
-    public void endGame(Connection connection) {
+    public void endGame(Connection connection,boolean won) {
         DB_manipulator.insertValues(connection, score.getScore(), getName());
         ResultSet resultSet = DB_manipulator.getScoresTable(connection);
         String highscorePlayerDate="";
@@ -184,50 +188,8 @@ public class game2048 {
             e.printStackTrace();
         }
         System.out.println();
-        screen.display_end_game(score.getScore(),highscoreTable,highscorePlayer,getName(),highscoreTableName,highscoreTableDate,highscorePlayerDate);
+        screen.display_end_game(score.getScore(),highscoreTable,highscorePlayer,getName(),highscoreTableName,highscoreTableDate,highscorePlayerDate,won);
         board.setBoardState(false);
     }
 
-
-//    public void moveSquares(KeyEvent e) {
-//        if (e.getKeyChar() != 'z' && e.getKeyCode() != 38)
-//        {
-//            for (int i = 0; i < squares.length;i++){
-//                for (int j = 0; j < squares.length; j++) {
-//                            //GET X is used for to check if it is already at the top, id so dont execute the code
-//                    if(squares[i][j].getX() > 0 && squares[FIRST][j].getValue() != 0)
-//                    {
-//                        squares[i][j]
-//                    }
-//                    if(squares[i][j].getX() > 0 && squares[SECOND][j].getValue() != 0)
-//                    {
-//
-//                    }
-//                    if(squares[i][j].getX() > 0 && squares[THIRD][j].getValue() != 0)
-//                    {
-//
-//                    }
-//                    if(squares[i][j].getX() > 0 && squares[FOURTH][j].getValue() != 0)
-//                    {
-//
-//                    }
-//                }
-//            }
-//
-//            squares[][]
-//        }
-//        if (e.getKeyChar() != 's' && e.getKeyCode() != 40)
-//        {
-//
-//        }
-//        if (e.getKeyChar() != 'q' && e.getKeyCode() != 37)
-//        {
-//
-//        }
-//        if (e.getKeyChar() != 'd' && e.getKeyCode() != 39)
-//        {
-//
-//        }
-//
-//    }
 }

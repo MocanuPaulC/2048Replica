@@ -164,11 +164,17 @@ public class Screens {
 
     }
 
-    public void display_end_game(int score, int highscoreTable, int highscorePlayer, String player, String highscoreTableName, String dateTable, String datePlayer) {
+    public void display_end_game(int score, int highscoreTable, int highscorePlayer, String player, String highscoreTableName, String dateTable, String datePlayer, boolean won) {
         System.out.println("""
                 +-----------------------------------------+
-                |                           	 	      |
-                |                Game Over          	  |
+                |                           	 	      |""");
+        if(!won){
+            System.out.println("|                Game Over                |");
+        }
+        else {
+            System.out.println("|                You Won!                 |");
+        }
+        System.out.println("""
                 |                           		      |
                 |                 		 	              |
                 |                   GG      		      |

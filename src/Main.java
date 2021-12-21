@@ -97,7 +97,8 @@ public class Main {
                         return;
                     }
                 case "TE":
-                    game2048.endGame(connection);
+                    game2048.endGame(connection,true);
+                    break;
                 default:
                     System.out.println("Invalid input");
                     break;

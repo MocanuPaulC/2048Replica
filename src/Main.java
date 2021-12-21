@@ -44,6 +44,11 @@ public class Main {
                         game2048.moveSquaresRight();
                     }
                     break;
+                case "SAVE GAME":
+                    if(game2048.getBoard().isBoardState()) {
+                        DB_manipulator.checkSaveGameExists(connection, game2048.getScoreObject().getScore(), game2048.getName(), game2048.getBoard().getArray());
+                    }
+                    break;
                 case "START GAME":
                     if(!game2048.getBoard().isBoardState()) {
 
@@ -96,8 +101,9 @@ public class Main {
                     else{
                         return;
                     }
+                    break;
                 case "TE":
-                    game2048.endGame(connection,true);
+                    DB_manipulator.checkSaveGameExists(connection, game2048.getScoreObject().getScore(), game2048.getName(), game2048.getBoard().getArray());
                     break;
                 default:
                     System.out.println("Invalid input");

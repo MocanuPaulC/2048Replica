@@ -14,6 +14,9 @@ public class game2048 {
     public String getName() {
         return name;
     }
+    public Score getScoreObject(){
+        return score;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -188,7 +191,8 @@ public class game2048 {
             e.printStackTrace();
         }
         System.out.println();
-        screen.display_end_game(score.getScore(),highscoreTable,highscorePlayer,getName(),highscoreTableName,highscoreTableDate,highscorePlayerDate,won);
+        screen.display_end_game(score.getScore(),highscoreTable,highscorePlayer,getName(),highscoreTableName,highscoreTableDate,highscorePlayerDate,won
+        );
         board.setBoardState(false);
     }
 

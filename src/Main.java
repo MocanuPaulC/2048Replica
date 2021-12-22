@@ -46,7 +46,9 @@ public class Main {
                     break;
                 case "SAVE GAME":
                     if(game2048.getBoard().isBoardState()) {
-                        DB_manipulator.checkSaveGameExists(connection, game2048.getScoreObject().getScore(), game2048.getName(), game2048.getBoard().getArray());
+                        game2048.checkSaveGame(connection, game2048.getName(),"save");
+                        System.out.println("Game Saved Successfully! Type quit to quit!");
+                        screen.display_game_board(game2048.getBoard().getArray(),false);
                     }
                     break;
                 case "START GAME":
@@ -56,7 +58,20 @@ public class Main {
                         game2048.getBoard().initialiseSquares();
                         game2048.getBoard().setBoardState(true);
 
-                        screen.display_game_board(game2048.getBoard().getArray());
+                        screen.display_game_board(game2048.getBoard().getArray(), true);
+                    }
+                    break;
+                case "RESTART":
+                    if(game2048.getBoard().isBoardState()){
+                        game2048.getBoard().setReset();
+                        screen.display_game_board(game2048.getBoard().getArray(),true);
+                    }
+                    break;
+                case "LOAD GAME":
+                    if(!game2048.getBoard().isBoardState()){
+                        System.out.println("Whose game do you want to load? Please type the according name:");
+                        String nameLoadGame = scanner.nextLine();
+                        game2048.checkSaveGame(connection,nameLoadGame,"load");
                     }
                     break;
                 case "HOME":
@@ -88,13 +103,6 @@ public class Main {
                     break;
                 case "QUIT":
                     if(game2048.getBoard().isBoardState()) {
-                        System.out.println("Do you want to save the game before quitting?");
-                        String answer = scanner.nextLine();
-                        if(answer.equals("yes") || answer.equals("y")){
-                            game2048.getBoard().setBoardState(false);
-                            screen.display_title();
-
-                        }
                         game2048.getBoard().setBoardState(false);
                         screen.display_title();
                     }
@@ -103,7 +111,7 @@ public class Main {
                     }
                     break;
                 case "TE":
-                    DB_manipulator.checkSaveGameExists(connection, game2048.getScoreObject().getScore(), game2048.getName(), game2048.getBoard().getArray());
+                   // DB_manipulator.checkSaveGameExists(connection, game2048.getScoreObject().getScore(), game2048.getName(), game2048.getBoard().getArray());
                     break;
                 default:
                     System.out.println("Invalid input");

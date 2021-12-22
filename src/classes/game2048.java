@@ -3,6 +3,7 @@ package classes;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class game2048 {
     Connection connection;
@@ -13,13 +14,6 @@ public class game2048 {
 
     public String getName() {
         return name;
-    }
-    public Score getScoreObject(){
-        return score;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public game2048(String name, Connection connection) {
@@ -88,7 +82,7 @@ public class game2048 {
                 }
             }
         }
-        screen.display_game_board(board.getArray());
+        screen.display_game_board(board.getArray(),true);
         checkEndGame();
     }
 
@@ -114,7 +108,7 @@ public class game2048 {
                 }
             }
         }
-        screen.display_game_board(board.getArray());
+        screen.display_game_board(board.getArray(),true);
         checkEndGame();
     }
 
@@ -138,7 +132,7 @@ public class game2048 {
                 }
             }
         }
-        screen.display_game_board(board.getArray());
+        screen.display_game_board(board.getArray(),true);
         checkEndGame();
     }
 
@@ -162,7 +156,7 @@ public class game2048 {
                 }
             }
         }
-        screen.display_game_board(board.getArray());
+        screen.display_game_board(board.getArray(),true);
         checkEndGame();
     }
 
@@ -196,4 +190,24 @@ public class game2048 {
         board.setBoardState(false);
     }
 
+    public void checkSaveGame(Connection connection, String name, String saveORload) {
+        if (saveORload.equals("save")) {
+            if (DB_manipulator.checkSaveGameExists(connection, name)) {
+                    DB_manipulator.replaceSaveGame(connection, score.getScore(), name,board.getArray());
+            }
+            else {
+                DB_manipulator.newSaveGame(connection, score.getScore(), name,board.getArray());
+            }
+        }
+        else {
+            if(DB_manipulator.checkSaveGameExists(connection,name)){
+                ResultSet resultSet = DB_manipulator.loadGame(connection, name);
+                screen.display_game_board(board.initialiseSquaresFromLoad(resultSet),false);
+                board.setBoardState(true);
+
+            }else {
+                System.out.println("No save file for that player, sorry!");
+            }
+        }
+    }
 }

@@ -11,12 +11,13 @@ public class Screens {
     public Screens() {
     }
 
-    public void display_game_board(Square[][] square) {
+    public void display_game_board(Square[][] square, boolean setRandom) {
         Board board = new Board(true);
         board.setBoardState(true);
 
-
-        board.setRandomValues(square);
+        if(setRandom) {
+            board.setRandomValues(square);
+        }
         System.out.println("Type restart to restart the game");
         System.out.println("Type save game to save the current state of the game");
 

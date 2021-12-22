@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7b906ba-3b93-4f1c-8d2b-2a0fc8b2955e" name="Changes" comment="Added ability to win the game">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efbb4698-2334-42bb-b8c7-46e6297dbc97.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efbb4698-2334-42bb-b8c7-46e6297dbc97.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efbb4698-2334-42bb-b8c7-46e6297dbc97/storage_v2/_src_/database/DB2048.wA7Ddw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efbb4698-2334-42bb-b8c7-46e6297dbc97/storage_v2/_src_/database/DB2048.wA7Ddw/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="b7b906ba-3b93-4f1c-8d2b-2a0fc8b2955e" name="Changes" comment="Finished making the save function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/DB_manipulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/DB_manipulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/game2048.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/game2048.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/DB_manipulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DB_manipulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Screens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Screens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/game2048.java" afterDir="false" />
     </list>
@@ -103,7 +107,7 @@
       <workItem from="1639747660931" duration="3540000" />
       <workItem from="1639774608144" duration="13734000" />
       <workItem from="1639992624212" duration="26000" />
-      <workItem from="1640083844269" duration="8071000" />
+      <workItem from="1640083844269" duration="25990000" />
     </task>
     <task id="LOCAL-00001" summary="Added ability to win the game">
       <created>1640084605089</created>
@@ -112,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640084605089</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finished making the save function">
+      <created>1640092146347</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640092146347</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +142,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added ability to win the game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ability to win the game" />
+    <MESSAGE value="Finished making the save function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished making the save function" />
   </component>
 </project>

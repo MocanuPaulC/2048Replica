@@ -1,6 +1,9 @@
 package classes;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 public class Board {
     private boolean boardState;
@@ -8,6 +11,7 @@ public class Board {
     private Square[][] values = new Square[MAXLENGTH][MAXLENGTH];
     private final Random random = new Random();
     private int count=0;
+
     public int getMAXLENGTH() {
         return MAXLENGTH;
     }
@@ -38,6 +42,26 @@ public class Board {
             }
         }
     }
+
+    public Square[][] initialiseSquaresFromLoad(ResultSet resultSet){
+        int i=3,j=3;
+        try {
+            while (resultSet.next()) {
+                values[i][j]=new Square(i,j,resultSet.getInt(1));
+                j--;
+                if(j==-1){
+                    j=3;
+                    i--;
+                }
+            }
+            return values;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public int getCountSquares(){
         count=0;
         for (int i = 0; i < MAXLENGTH; i++) {

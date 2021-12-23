@@ -2,19 +2,19 @@ package classes;
 
 public class Score {
     private int score;
-    //DONT TOUCH THIS IS TO CALCULATE OUR SCORE IN THE GAME
+
 
 
     public Score() {
     }
 
+    //THIS METHOD CALCULATES THE TOTAL SCORE BY ADDING UP ALL THE VALUES IN EACH BOX
     public void setScore(Square[][] squares) {
         this.score=0;
         final int MAXLENGTH = 4;
-
+//THE LOOP ITERATES THROUGH ALL THE SQUARES
         for (int i = 0; i < MAXLENGTH; i++) {
             for (int j = 0; j < MAXLENGTH; j++) {
-                //CALCULATE TOTAL SCORE BY ADDING UP ALL THE VALUES IN EACH BOX
                 this.score += squares[i][j].getValue();
             }
         }

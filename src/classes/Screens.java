@@ -6,15 +6,16 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Screens {
-    DB_manipulator db_manipulator = new DB_manipulator();
 
     public Screens() {
     }
 
+    //This method displays the game board and sets its state to true (meaning the game has started)
     public void display_game_board(Square[][] square, boolean setRandom) {
         Board board = new Board(true);
         board.setBoardState(true);
 
+        //This if checks if the Square array provided should receive new random values for the empty squares
         if(setRandom) {
             board.setRandomValues(square);
         }

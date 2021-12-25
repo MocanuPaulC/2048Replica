@@ -122,11 +122,6 @@ public class Board {
     }
 
 
-    public Square[][] getArrayStart() {
-        //THIS IS TO GET THE VALUES FROM ALL SQUARES TO CALCULATE THE SCORE AND INITIALISE THE GAME
-        initialiseSquares();
-        return values;
-    }
     public Square[][] getArray() {
         //THIS IS TO GET THE VALUES FROM ALL SQUARES TO CALCULATE THE SCORE
 

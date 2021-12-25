@@ -34,11 +34,11 @@ public class game2048 {
             for (int j = 0; j < board.getMAXLENGTH(); j++) {
 
                 Square square = squares[i][j];
+                if (square.getValue() == 2048) {
+                    endGame(this.connection, true);
+                    return;
+                }
                 if (square.getValue() != 0) {
-                    if(square.getValue()==2048){
-                        endGame(this.connection,true);
-                        return;
-                    }
 
                     for (int y = i - 1; y <= i + 1; y++) {
                         for (int x = j - 1; x <= j + 1; x++) {
@@ -58,7 +58,7 @@ public class game2048 {
             }
 
         }
-        endGame(this.connection,false);
+        endGame(this.connection, false);
     }
 
     //moving squares up
@@ -82,7 +82,7 @@ public class game2048 {
                 }
             }
         }
-        screen.display_game_board(board.getArray(),true);
+        screen.display_game_board(board.getArray(), true);
         checkEndGame();
     }
 
@@ -108,7 +108,7 @@ public class game2048 {
                 }
             }
         }
-        screen.display_game_board(board.getArray(),true);
+        screen.display_game_board(board.getArray(), true);
         checkEndGame();
     }
 
@@ -132,7 +132,7 @@ public class game2048 {
                 }
             }
         }
-        screen.display_game_board(board.getArray(),true);
+        screen.display_game_board(board.getArray(), true);
         checkEndGame();
     }
 
@@ -156,36 +156,36 @@ public class game2048 {
                 }
             }
         }
-        screen.display_game_board(board.getArray(),true);
+        screen.display_game_board(board.getArray(), true);
         checkEndGame();
     }
 
-    public void endGame(Connection connection,boolean won) {
+    public void endGame(Connection connection, boolean won) {
         DB_manipulator.insertValues(connection, score.getScore(), getName());
         ResultSet resultSet = DB_manipulator.getScoresTable(connection);
-        String highscorePlayerDate="";
-        int highscorePlayer=0;
-        String highscoreTableName="";
-        String highscoreTableDate="";
-        int highscoreTable=0;
+        String highscorePlayerDate = "";
+        int highscorePlayer = 0;
+        String highscoreTableName = "";
+        String highscoreTableDate = "";
+        int highscoreTable = 0;
         try {
             while (resultSet.next()) {
-                highscoreTableName=resultSet.getString(1);
-                highscoreTableDate=resultSet.getString(2);
-                highscoreTable=resultSet.getInt(3);
+                highscoreTableName = resultSet.getString(1);
+                highscoreTableDate = resultSet.getString(2);
+                highscoreTable = resultSet.getInt(3);
                 break;
             }
-            resultSet = DB_manipulator.getScoresName(connection,getName());
+            resultSet = DB_manipulator.getScoresName(connection, getName());
             while (resultSet.next()) {
-                highscorePlayerDate=resultSet.getString(2);
-                highscorePlayer=resultSet.getInt(3);
+                highscorePlayerDate = resultSet.getString(2);
+                highscorePlayer = resultSet.getInt(3);
                 break;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         System.out.println();
-        screen.display_end_game(score.getScore(),highscoreTable,highscorePlayer,getName(),highscoreTableName,highscoreTableDate,highscorePlayerDate,won
+        screen.display_end_game(score.getScore(), highscoreTable, highscorePlayer, getName(), highscoreTableName, highscoreTableDate, highscorePlayerDate, won
         );
         board.setBoardState(false);
     }
@@ -193,19 +193,17 @@ public class game2048 {
     public void checkSaveGame(Connection connection, String name, String saveORload) {
         if (saveORload.equals("save")) {
             if (DB_manipulator.checkSaveGameExists(connection, name)) {
-                    DB_manipulator.replaceSaveGame(connection, score.getScore(), name,board.getArray());
+                DB_manipulator.replaceSaveGame(connection, score.getScore(), name, board.getArray());
+            } else {
+                DB_manipulator.newSaveGame(connection, score.getScore(), name, board.getArray());
             }
-            else {
-                DB_manipulator.newSaveGame(connection, score.getScore(), name,board.getArray());
-            }
-        }
-        else {
-            if(DB_manipulator.checkSaveGameExists(connection,name)){
+        } else {
+            if (DB_manipulator.checkSaveGameExists(connection, name)) {
                 ResultSet resultSet = DB_manipulator.loadGame(connection, name);
-                screen.display_game_board(board.initialiseSquaresFromLoad(resultSet),false);
+                screen.display_game_board(board.initialiseSquaresFromLoad(resultSet), false);
                 board.setBoardState(true);
 
-            }else {
+            } else {
                 System.out.println("No save file for that player, sorry!");
             }
         }

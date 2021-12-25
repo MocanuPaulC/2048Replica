@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7b906ba-3b93-4f1c-8d2b-2a0fc8b2955e" name="Changes" comment="Finished making the save function">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efbb4698-2334-42bb-b8c7-46e6297dbc97.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efbb4698-2334-42bb-b8c7-46e6297dbc97.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/DB_manipulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/DB_manipulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/Score.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/Screens.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/classes/game2048.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/classes/game2048.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/DB_manipulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/DB_manipulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Screens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Screens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/game2048.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/game2048.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +107,8 @@
       <workItem from="1639747660931" duration="3540000" />
       <workItem from="1639774608144" duration="13734000" />
       <workItem from="1639992624212" duration="26000" />
-      <workItem from="1640083844269" duration="30422000" />
+      <workItem from="1640083844269" duration="42376000" />
+      <workItem from="1640426976694" duration="3458000" />
     </task>
     <task id="LOCAL-00001" summary="Added ability to win the game">
       <created>1640084605089</created>

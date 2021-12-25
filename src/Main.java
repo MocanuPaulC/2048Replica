@@ -110,11 +110,8 @@ public class Main {
                         return;
                     }
                     break;
-                case "TE":
-                   // DB_manipulator.checkSaveGameExists(connection, game2048.getScoreObject().getScore(), game2048.getName(), game2048.getBoard().getArray());
-                    break;
                 default:
-                    System.out.println("Invalid input");
+                    System.out.println("Invalid input, try again!");
                     break;
             }
         }

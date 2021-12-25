@@ -70,7 +70,7 @@ public class DB_manipulator {
     //This method checkes to see if a saved game exists for a certain player.
     //It is used both when loading and saving a game
     //It needs a connection object to connect to the database and the name of the player that will be checked
-    public static boolean checkSaveGameExists(Connection connection, String name) {
+       public static boolean checkSaveGameExists(Connection connection, String name) {
         try {
             Statement statement = connection.createStatement();
             //The resultSet object will either be empty or contain exactly one row
